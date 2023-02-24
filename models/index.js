@@ -3,7 +3,7 @@ const Animals = require('./Animals');
 const Adoptable = require('./Adoptable');
 
 Animals.belongsTo(Adoptable, {
-    foreignKey: 'animal_type',
+    foreignKey: 'animal_id',
 });
 
 module.exports = {Users, Animals, Adoptable}
