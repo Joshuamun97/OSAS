@@ -23,7 +23,7 @@ Adoptable.init(
           description: {
             type: DataTypes.STRING,
           },
-          animal_type: {
+          animal_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'animals',
