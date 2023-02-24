@@ -39,3 +39,5 @@ Adoptable.init(
         modelName: 'adoptable',
     }
 );
+
+module.exports = Adoptable;
