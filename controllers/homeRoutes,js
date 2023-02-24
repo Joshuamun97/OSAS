@@ -1,2 +1,0 @@
-const router = require('express').Router();
-const { Animal, Adoptable, User } = require('../models');

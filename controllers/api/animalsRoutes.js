@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { Animal } = require('../../models');
+const { Animals } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newAnimal = await Animal.create({
+    const newAnimals = await Animals.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newAnimal);
+    res.status(200).json(newAnimals);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,19 +17,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const animalData = await Animal.destroy({
+    const animalsData = await Animals.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!animalData) {
+    if (!animalsData) {
       res.status(404).json({ message: 'No pet found with this id!' });
       return;
     }
 
-    res.status(200).json(animalData);
+    res.status(200).json(animalsData);
   } catch (err) {
     res.status(500).json(err);
   }
