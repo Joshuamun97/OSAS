@@ -25,3 +25,5 @@ Animals.init(
   }
 
 )
+
+module.exports = Animals;
