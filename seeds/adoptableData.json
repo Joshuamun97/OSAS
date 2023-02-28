@@ -1,43 +1,49 @@
 [
     {
         "name" : "Simon",
-        "Animal" : "Cat",
-        "Description" : "Playful Siamese Cat in need of a home.",
+        "animal" : "Cat",
+        "description" : "Playful Siamese Cat in need of a home.",
+        "age" : 25,
         "adoption_Fee" : 50
 
     },
     {
         "name" : "Buddy",
-        "Animal" : "Dog",
-        "Description" : "Calm Golden Retreiver Looking for someone to cuddle with!",
+        "animal" : "Dog",
+        "description" : "Calm Golden Retreiver Looking for someone to cuddle with!",
+        "age" : 35,
         "adoption_Fee" : 50
 
     },
     {
         "name" : "Buggs",
-        "Animal" : "Bunny",
-        "Description" : "Senior Bunny looking for somewhere to settle down.",
+        "animal" : "Bunny",
+        "description" : "Senior Bunny looking for somewhere to settle down.",
+        "age" : 55,
         "adoption_Fee" : 50
 
     },
     {
         "name" : "Hammy",
-        "Animal" : "Hamster",
-        "Description" : "Rambunctious Hamster Looking for a new running wheel. The last one broke!",
+        "animal" : "Hamster",
+        "description" : "Rambunctious Hamster Looking for a new running wheel. The last one broke!",
+        "age" : 15,
         "adoption_Fee" : 50
 
     },
     {
         "name" : "Terry",
-        "Animal" : "Turtle",
-        "Description" : "Slow but steady turtle looking to retire from rabbit racing.",
+        "animal" : "Turtle",
+        "description" : "Slow but steady turtle looking to retire from rabbit racing.",
+        "age" : 33,
         "adoption_Fee" : 50
 
     },
     {
         "name" : "Larry",
-        "Animal" : "Lizard",
-        "Description" : "Larry the Lizard just be Lizarding.",
+        "animal" : "Lizard",
+        "description" : "Larry the Lizard just be Lizarding.",
+        "age" : 44,
         "adoption_Fee" : 50
 
     }
