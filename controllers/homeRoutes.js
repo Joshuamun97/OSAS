@@ -7,12 +7,12 @@ router.get('/', async (req, res) => {
     // Get all Adoptable and JOIN with user data
     //const adoptableData = await Adoptable.findAll({});
     const adoptableData = await Adoptable.findAll({
-      include: [
-        {
-          model: Users,
-          attributes: ['name'],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Users,
+      //     attributes: ['name'],
+      //   },
+      // ],
     });
     console.log (adoptableData)
     // Serialize data so the template can read it
@@ -33,7 +33,7 @@ router.get('/adoptable/:id', async (req, res) => {
     const adoptableData = await Adoptable.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: Users,
           attributes: ['name'],
         },
       ],
