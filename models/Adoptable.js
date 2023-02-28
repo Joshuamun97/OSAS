@@ -23,13 +23,20 @@ Adoptable.init(
           description: {
             type: DataTypes.STRING,
           },
-          animal_id: {
+          animal_type: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'animals',
                 key: 'id',
             },
           },
+          user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'users',
+              key: 'id',
+            }
+          }
     },
     {
         sequelize,
