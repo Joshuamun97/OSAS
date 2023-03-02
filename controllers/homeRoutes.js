@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     // Get all Adoptable and JOIN with user data
     //const adoptableData = await Adoptable.findAll({});
     const adoptableData = await Adoptable.findAll({
-      // include: [
+      //include: [
       //   {
       //     model: Users,
       //     attributes: ['name'],
@@ -38,7 +38,7 @@ router.get('/adoptable/:id', async (req, res) => {
         },
       ],
     });
-
+    console.log('hello')
     const adoptable = adoptableData.get({ plain: true });
 
     res.render('adoptable', {
