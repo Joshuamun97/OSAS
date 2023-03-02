@@ -54,7 +54,7 @@ router.get('/adoptable/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await Users.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Adoptable }],
     });
