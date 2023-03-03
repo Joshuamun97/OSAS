@@ -5,15 +5,16 @@ router.get('/', async (req, res) => {
   try {
     //console.log (req)
     // Get all Adoptable and JOIN with user data
-    //const adoptableData = await Adoptable.findAll({});
-    console.log (adoptableData)
+    const adoptableData = await Adoptable.findAll({});
+    // console.log (adoptableData)
     // Serialize data so the template can read it
-    const adoptable = adoptableData.map((adoptable) => adoptable.get({ plain: true }));
-    console.log(adoptable)
+    const adoptables = adoptableData.map((adoptable) => adoptable.get({ plain: true }));
+    console.log(adoptables)
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      adoptable, 
+      adoptables, 
       logged_in: req.session.logged_in 
+
     });
   } catch (err) {
     res.status(500).json(err);

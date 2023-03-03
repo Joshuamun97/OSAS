@@ -1,6 +1,6 @@
 <!-- Loop over each object in the projects array -->
 {{#each adoptables as |adoptable| }}
-<div class="row mb-4 project">
+<div class="row mb-4 project" style="border: 2px solid red;">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -13,7 +13,8 @@
       <span class="dollar-amount">{{format_amount adoptable.needed_funding}}</span>
       needed!
     </p>
-    <p>Created by {{adoptable.user.name}} on {{format_date adoptable.date_created}}</p>
+    <p>Created by {{adoptable.user.name}} on </p>
+    {{!-- {{format_date adoptable.date_created}} --}}
   </div>
   <div class="col-md-7">
     <p>
