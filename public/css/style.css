@@ -54,26 +54,3 @@ header, .project:not(:last-child) {
     color: #065b83;
     text-decoration: underline;
   }
-
-  .left,
-  .right {
-    padding: 4.5rem;
-  
-  }
-  
-  .left {
-    border-right: 5px solid var(--background);
-  
-  }
-  
-  .left .title {
-    font-weight: 800;
-  
-  }
-  
-  .left .colored {
-    color: var(--brandColor);
-    font-weight: 500;
-    margin-top: 1rem 
-  
-  }
