@@ -2,6 +2,16 @@ const router = require('express').Router();
 const { Adoptable } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/', (req, res) => {
+  // find all categories
+  // be sure to include its associated Products
+  Adoptable.findAll({})
+    .then(adoptableData => res.json(adoptableData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 router.post('/', withAuth, async (req, res) => {
   try {
     const newAdoptable = await Adoptable.create({
