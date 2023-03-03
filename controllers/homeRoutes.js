@@ -6,14 +6,6 @@ router.get('/', async (req, res) => {
     //console.log (req)
     // Get all Adoptable and JOIN with user data
     //const adoptableData = await Adoptable.findAll({});
-    const adoptableData = await Adoptable.findAll({
-      //include: [
-      //   {
-      //     model: Users,
-      //     attributes: ['name'],
-      //   },
-      // ],
-    });
     console.log (adoptableData)
     // Serialize data so the template can read it
     const adoptable = adoptableData.map((adoptable) => adoptable.get({ plain: true }));
