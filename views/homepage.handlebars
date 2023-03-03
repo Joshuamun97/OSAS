@@ -13,7 +13,7 @@
       <span class="dollar-amount">{{format_amount adoptable.needed_funding}}</span>
       needed!
     </p>
-    <p>Created by {{adoptable.user.name}} on </p>
+    <p>Created by {{adoptable.user.name}} on {{format_date adoptable.createdAt}}</p>
     {{!-- {{format_date adoptable.date_created}} --}}
   </div>
   <div class="col-md-7">
