@@ -1,12 +1,18 @@
 const router = require('express').Router();
 const { Adoptable } = require('../../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../../seeds/utils/auth');
 
-router.get('/', (req, res) => {
-  // find all categories
+router.get('/:id', (req, res) => {
+  // find one category by its `id` value
   // be sure to include its associated Products
-  Adoptable.findAll({})
-    .then(adoptableData => res.json(adoptableData))
+  Adoptable.findOne(
+    {
+      where: {
+        id: req.params.id
+      },
+    }
+  )
+    .then(singleAdoptableData => res.json(singleAdoptableData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
