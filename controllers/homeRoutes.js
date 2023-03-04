@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Adoptable, Users } = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../seeds/utils/auth');
 router.get('/', async (req, res) => {
   try {
     //console.log (req)
