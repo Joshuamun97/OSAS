@@ -1,26 +1,29 @@
 <!-- Loop over each object in the projects array -->
+ <section style="margin-top:12cm"class="About">
+    <h3>Little about us</h3>
+    <p>A Website Dedicated to finding a home for any animal in need. Find a new family member, or post an animal for adoption at no fee! We believe that saving an animals life should cost nothing other than your time and effort. We are a non-profit organization and work strictly off of donations so please feel free to show some love and keep this website possible. You will find an option to donate either during the adoption process or by clicking <a style="text-decoration: underline">here</a>!</p>
+</section>
+  <p>
+    <button href="./post.handlebars" class="btn btn-primary">My Furry Friend Needs a Home!</button>
+  </p>
 {{#each adoptables as |adoptable| }}
-<div class="row mb-4 project" style="border: 2px solid red;">
+<div style="margin-top:2cm"class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{{get_emoji}}}
-      <a href="api/adoptable/{{adoptable.id}}">{{adoptable.name}}</a>
+      <a style="font-family: Impact, fantasy;"href="adoptable/{{adoptable.id}}">{{adoptable.name}}</a>
     </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount adoptable.needed_funding}}</span>
-      needed!
+    <p style="">
+      Click on pet for adoption information and more!
     </p>
-    <p>Created by {{adoptable.user.name}} on {{format_date adoptable.createdAt}}</p>
+    <p style="">Posted for adoption on {{format_date adoptable.createdAt}}</p>
     {{!-- {{format_date adoptable.date_created}} --}}
   </div>
   <div class="col-md-7">
-    <p>
+    <p style="">
       {{adoptable.description}}
     </p>
   </div>
 </div>
 {{/each}}
-
