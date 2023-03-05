@@ -2,13 +2,13 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#adoptable-name').value.trim();
-  const needed_funding = document.querySelector('#adoptable-funding').value.trim();
+  const age = document.querySelector('#adoptable-age').value.trim();
   const description = document.querySelector('#adoptable-desc').value.trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/adoptable`, {
+  if (name && age && description) {
+    const response = await fetch(`/api/Adoptable`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, age, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -25,7 +25,6 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-
     const response = await fetch(`/api/adoptable/${id}`, {
       method: 'DELETE',
     });
@@ -39,10 +38,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-animal-form');
-document
+  .querySelector('.new-adoption-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.animal-list')
+  .querySelector('.adoption-list')
   .addEventListener('click', delButtonHandler);
